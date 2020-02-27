@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
+import { of, Observable, BehaviorSubject } from 'rxjs';
+
+import { StateService } from './../../../shared/services/state/state.service';
+import { EStateProps } from './../../../shared/services/state/model/state.model';
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -7,9 +12,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  public isLogedIn: boolean;
+
+  constructor(private state: StateService) { }
 
   ngOnInit(): void {
+    this.state.select(EStateProps.isLogedIn).subscribe(
+      (isLogedIn: boolean) => this.isLogedIn = isLogedIn
+    )
   }
 
 }

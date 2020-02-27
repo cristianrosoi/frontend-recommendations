@@ -1,1 +1,18 @@
-<p>login works!</p>
+<div class="container login-container">
+    <form [formGroup]="loginForm">
+        <div class="form-group">
+            <h1>Please Login</h1>
+        </div>
+        <div class="form-group">
+            <label for="user">Username</label>
+            <input type="text" class="form-control" [ngClass]="{'login-container__input-error': isError$ | async}" formControlName="username">
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" [ngClass]="{'login-container__input-error': isError$ | async}" formControlName="password">
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary" (click)="onLogin()">Login</button>
+        </div>
+    </form>
+</div>
