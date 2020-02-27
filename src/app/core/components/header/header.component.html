@@ -2,11 +2,8 @@
     <a class="navbar-brand" routerLink="/dashboard">Recommendations App</a>
     <div class="collapse navbar-collapse">
         <ul class="navbar-nav ml-auto">
-          <li *ngIf="!isLogedIn" class="nav-item active">
-            <a class="nav-link" routerLink="/login">Login</a>
-          </li>
           <li *ngIf="isLogedIn" class="nav-item active">
-            <a class="nav-link" routerLink="/recommendations">Recommendations</a>
+            <a class="nav-link" routerLink="#" (click)="logout()">Logout</a>
           </li>
         </ul>
     </div>
