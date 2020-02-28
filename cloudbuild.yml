@@ -40,7 +40,7 @@ steps:
   args:
   - 'rollout'
   - 'restart'
-  - 'deployment/frontend-recommendations'
+  - 'deployment/frontend-demo.frontend-recommendations'
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=europe-west1-b'
   - 'CLOUDSDK_CONTAINER_CLUSTER=istio-cluster'
