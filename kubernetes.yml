@@ -16,6 +16,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: frontend-recommendations
+  namespace: frontend-demo
   labels:
     app: frontend-recommendations
 spec:
@@ -39,6 +40,7 @@ kind: Service
 apiVersion: v1
 metadata:
   name: frontend-recommendations
+  namespace: frontend-demo
 spec:
   selector:
     app: frontend-recommendations
