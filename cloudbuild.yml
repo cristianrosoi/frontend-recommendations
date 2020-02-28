@@ -7,7 +7,7 @@ steps:
 # This step runs the unit tests on the app
 - name: 'gcr.io/cloud-builders/npm'
   id: Test
-  args: ['test']
+  args: ['run', 'test']
 
 # This step builds the container image.
 - name: 'gcr.io/cloud-builders/docker'
