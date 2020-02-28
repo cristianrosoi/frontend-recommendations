@@ -32,7 +32,7 @@ spec:
       - name: frontend-recommendations
         image: gcr.io/cirrus-initial-project/frontend-recommendations:latest
         ports:
-        - containerPort: 3000
+        - containerPort: 4200
         imagePullPolicy: Always
 ---
 kind: Service
@@ -45,5 +45,5 @@ spec:
   ports:
   - protocol: TCP
     port: 80
-    targetPort: 3000
+    targetPort: 4200
   type: LoadBalancer
