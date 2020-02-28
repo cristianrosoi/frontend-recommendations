@@ -3,7 +3,7 @@
   "version": 1, 
   "newProjectRoot": "projects",
   "projects": {
-    "frontend-test": {
+    "frontend-recommendations": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/frontend-test",
+            "outputPath": "dist/frontend-recommendations",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -67,18 +67,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "frontend-test:build"
+            "browserTarget": "frontend-recommendations:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "frontend-test:build:production"
+              "browserTarget": "frontend-recommendations:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "frontend-test:build"
+            "browserTarget": "frontend-recommendations:build"
           }
         },
         "test": {
@@ -116,15 +116,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "frontend-test:serve"
+            "devServerTarget": "frontend-recommendations:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "frontend-test:serve:production"
+              "devServerTarget": "frontend-recommendations:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "frontend-test"
+  "defaultProject": "frontend-recommendations"
 }
