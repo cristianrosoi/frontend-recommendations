@@ -12,7 +12,7 @@
 
     <br>
 
-    <ng-container *ngIf="(customer$ | async) as customer">
+    <ng-container *ngIf=" !isError && (customer$ | async) as customer">
         <div class="card">
             <div class="card-body">
                 <p><strong>Name:</strong> {{ customer?.name }}</p>
@@ -23,4 +23,14 @@
             </div>
         </div>
     </ng-container>
+
+    <ng-container *ngIf="isError then customerError"></ng-container>
 </div>
+
+<ng-template #customerError>
+    <div class="card">
+        <div class="card-body">
+            <p class="error">ERROR: Can't get Customer Data. Please try again later.</p>
+        </div>
+    </div>
+</ng-template>

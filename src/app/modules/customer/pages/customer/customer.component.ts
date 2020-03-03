@@ -1,7 +1,8 @@
 import { ICustomer } from './../../model/customer.model';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
+import { tap, catchError } from 'rxjs/operators';
 
 import { CustomerService } from './../../service/customer.service';
 
@@ -13,15 +14,22 @@ import { CustomerService } from './../../service/customer.service';
 export class CustomerComponent implements OnInit, OnDestroy {
 
   public customer$: Observable<ICustomer>;
+  public isError: boolean;
 
   constructor(private customerService: CustomerService) { }
 
   ngOnInit(): void {
-    this.getCustomer();
   }
 
   public getCustomer(): void {
-    this.customer$ = this.customerService.getCustomer();
+    this.customer$ = this.customerService.getCustomer()
+      .pipe(
+        catchError(error => {
+          console.error(`Can't get customer data`, error);
+          this.isError = true;
+          return of({} as ICustomer);
+        })
+      )
   }
 
   ngOnDestroy(): void {

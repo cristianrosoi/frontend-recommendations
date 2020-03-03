@@ -18,6 +18,6 @@ export class CustomerService {
     const url = environment.serviceUrls.apiUrl + environment.serviceUrls.endpoints.customer;
     const mockUrl = 'assets/mock/customer.json';
 
-    return this.http.get<ICustomer>(mockUrl);
+    return this.http.get<ICustomer>(url);
   }
 }
