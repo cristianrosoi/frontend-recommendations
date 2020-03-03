@@ -13,9 +13,8 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public onContinue(): void {
-    console.log('lazy load recommendations');
-    this.router.navigate(['/recommendations-api']);
+  public onContinue(page: string): void {
+    this.router.navigate([page]);
   }
 
 }

@@ -12,6 +12,9 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'recommendations-api',
       loadChildren: () => import('./modules/recommendations/recommendations.module').then(m => m.RecommendationsModule)
+  },
+  { path: 'customer-api',
+      loadChildren: () => import('./modules/customer/customer.module').then(m => m.CustomerModule)
   }
 ];
 
