@@ -1,1 +1,26 @@
-<p>customer works!</p>
+<div class="container customer-container mt-3">
+    <h1>Customer Page</h1>
+    
+    <br>
+
+    <div class="card">
+        <div class="card-body d-flex justify-content-between">
+            <h3>Customer API</h3>
+            <button class="btn btn-primary" (click)="getCustomer()">Get Customer Data</button>
+        </div>
+    </div>
+
+    <br>
+
+    <ng-container *ngIf="(customer$ | async) as customer">
+        <div class="card">
+            <div class="card-body">
+                <p><strong>Name:</strong> {{ customer?.name }}</p>
+                <p><strong>Address:</strong> {{ customer?.address }}</p>
+                <p><strong>Preference Date:</strong> {{ customer?.preference?.date }}</p>
+                <p><strong>Preference Comment:</strong> {{ customer?.preference?.comment }}</p>
+                <p><strong>Preference Recommendation Comment:</strong> {{ customer?.preference?.recommendation?.comment }}</p>
+            </div>
+        </div>
+    </ng-container>
+</div>

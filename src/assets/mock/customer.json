@@ -1,0 +1,15 @@
+{
+  "id": 79742,
+  "name": "Lord Voldemort",
+  "address": "1600 Pennsylvania Ave NW, Washington DC",
+  "preference": {
+    "id": 178674,
+    "date": "2020-03-03",
+    "comment": "user recommendation",
+    "recommendation": {
+      "id": 512558,
+      "comment": "recommendation v1 from 'recommendation-7c69f569d8-pf7lz': 11",
+      "ok": true
+    }
+  }
+}
